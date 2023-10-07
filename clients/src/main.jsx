@@ -14,3 +14,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
+VITE_APP_BACKEND_URL = http://localhost:5000
+VITE_APP_FRONTEND_URL = http://localhost:5173
