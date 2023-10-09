@@ -40,10 +40,11 @@ const registerUser = asyncHandler(async (req, res) => {
     });
     // Send to user data
     // res.status(201).json({ others });
-    res.status(201).jsonp({ _id, name, email, role, token });
+    res.status(201).json({ _id, name, email, role, token });
+    return;
   }
-
-  res.send("Register");
+  res.status(500).json({ error: "User registration failed" });
+  // res.send("Register");
 });
 
 // Login User

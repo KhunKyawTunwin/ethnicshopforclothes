@@ -169,6 +169,7 @@ const authSlice = createSlice({
         state.isSuccess = true;
         state.isLoggedIn = true;
         state.user = action.payload;
+        console.log("Action payload is ", action.payload);
         toast.success("Login successfull");
       })
       .addCase(login.rejected, (state, action) => {
@@ -203,7 +204,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.isLoggedIn = action.payload;
-        state.user = action.payload;
+        // state.user = action.payload;
         toast.success(action.payload);
         if (action.payload.message === "invalid signature") {
           state.isLoggedIn = false;

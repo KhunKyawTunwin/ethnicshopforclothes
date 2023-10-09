@@ -26,10 +26,10 @@ const Register = () => {
     (state) => state.auth
   );
 
-  console.log(
-    "Auth Users",
-    useSelector((state) => state.auth)
-  );
+  // console.log(
+  //   "Auth Users",
+  //   useSelector((state) => state.auth)
+  // );
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });

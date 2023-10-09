@@ -15,11 +15,10 @@ const protect = asyncHandler(async (req, res, next) => {
     // get User Id from Token
     const user = await User.findById(verified.id).select("-password");
     if (!user) {
-      res.status(401);
       throw new Error("User not found.");
     }
-    req.user = user;
 
+    req.user = user;
     next();
   } catch (error) {
     res.status(401);

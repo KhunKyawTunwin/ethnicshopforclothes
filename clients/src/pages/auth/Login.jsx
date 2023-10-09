@@ -18,7 +18,6 @@ const Login = () => {
   const { isLoading, isLoggedIn, isSuccess, user } = useSelector(
     (state) => state.auth
   );
-  console.log("User data from auth is:", user);
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -37,7 +36,7 @@ const Login = () => {
     if (isSuccess && isLoggedIn) {
       navigate("/");
     }
-    // dispatch(RESET_AUTH());
+    dispatch(RESET_AUTH());
   }, [isSuccess, isLoggedIn, dispatch, navigate]);
 
   return (

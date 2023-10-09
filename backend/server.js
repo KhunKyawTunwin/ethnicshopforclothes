@@ -7,16 +7,18 @@ const cookieParser = require("cookie-parser");
 const corsOptions = require("./config/corsOptions");
 const credentials = require("./middleware/credentials");
 const userRoute = require("./routes/userRoute");
+const compression = require("compression");
 const errorHandler = require("./middleware/errorMiddleware");
 
 const app = express();
 connectDB(); // DB Connection
 
 // Middlewares
+app.use(compression());
 app.use(cors(corsOptions));
 app.use(credentials);
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
